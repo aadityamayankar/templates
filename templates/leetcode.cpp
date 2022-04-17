@@ -17,11 +17,8 @@ constexpr int mod =     1e9 + 7;
 
 class Solution {
 public:
-	int divide(int dividend, int divisor) {
-        ll res = 1ll * dividend / divisor;
-        if(res > INT_MAX) return INT_MAX;
-        else if(res < INT_MIN) return INT_MIN;
-        return res;
+	int solve() {
+        
     }
 };
 
