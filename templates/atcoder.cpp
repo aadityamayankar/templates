@@ -23,6 +23,8 @@ constexpr ll mod = 1e9 + 7;
 #define mini(x)     *min_element(all(x))
 #define sum(x)      accumulate(all(x),0)
 
+using pi = pair<int, int>;
+
 template <typename T1, typename T2>
 istream &operator>>(istream &istream, pair<T1, T2> &p){return (istream >> p.first >> p.second);}
 template <typename T>
