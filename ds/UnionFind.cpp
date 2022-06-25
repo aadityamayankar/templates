@@ -3,7 +3,7 @@ class UnionFind{
     vector<int> parent, sz;
     public:
     UnionFind(int n){
-        parent.resize(n + 1), sz.resize(n + 1), connected = n, iota(parent.begin(),parent.end(),0);
+        parent.resize(n + 1), sz.resize(n + 1, 1), connected = n, iota(parent.begin(),parent.end(),0);
     }
     int find(int n){
         while(n != parent[n]) parent[n] = parent[parent[n]], n = parent[n];
