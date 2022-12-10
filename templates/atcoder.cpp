@@ -21,7 +21,7 @@ constexpr ll mod = 1e9 + 7;
 #define each(i,x)   for (auto& i: x)
 #define maxi(x)     *max_element(all(x))
 #define mini(x)     *min_element(all(x))
-#define sum(x)      accumulate(all(x),0)
+#define sum(x)      accumulate(all(x),0ll)
 
 using pi = pair<int, int>;
 
