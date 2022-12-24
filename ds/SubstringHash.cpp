@@ -1,7 +1,8 @@
+//expects macro for ll
 class SingleHash {
     vector<int> suf, b;
     int mod;
-
+    public:
     SingleHash(string s, int base = 153, int _mod = 1000000009) {
         int n = s.length();
         suf.assign(n + 1, 0); // suf[n] = 0
