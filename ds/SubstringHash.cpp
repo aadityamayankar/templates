@@ -17,8 +17,8 @@ class SingleHash {
             b[i] = (ll)b[i - 1] * b[1] % mod;
         }
     }
-
-    int substr(int l, int r) const { // [l, r]
+    
+    int substr(int l, int r) const { // [l, r] 0 based
         ll v = suf[l] - (ll)suf[r + 1] * b[r - l + 1];
         v %= mod;
         v += mod;
