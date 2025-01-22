@@ -8,7 +8,7 @@ vector<int> dijkstra(int s, vector<vector<pair<int, int>>> &adj) {
     q.insert({0, s});
     while (!q.empty()) {
         int u = q.begin()->second; q.erase(q.begin());
-        for (auto& edge : adj[v]) {
+        for (auto& edge : adj[u]) {
             int v = edge.first, w = edge.second;
             if (d[u] + w < d[v]) {
                 q.erase({d[v], v});
