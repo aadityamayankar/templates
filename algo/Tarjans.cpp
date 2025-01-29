@@ -1,5 +1,3 @@
-// tarjans algorithm is used to find the strongly connected components in a graph.
-
 class Tarjans{
     vector<vector<int>> adj;
     vector<int> low, disc, scc;
