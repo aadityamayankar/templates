@@ -13,16 +13,16 @@ template <class T> class BIT {
 
 	/** Sets the value at index ind to val. */
 	void set(int ind, T val) {
-        add(ind, val - arr[ind]); 
-    }
+	        add(ind, val - arr[ind]); 
+	}
 
 	/** Adds val to the element at index ind. */
 	void add(int ind, T val) {
 		arr[ind] += val;
 		ind++;
 		for (; ind <= size; ind += ind & -ind) {
-            bit[ind] += val; 
-        }
+	            bit[ind] += val; 
+	        }
 	}
 
 	/** @return The sum of all values in [0, ind]. */
@@ -30,8 +30,8 @@ template <class T> class BIT {
 		ind++;
 		T total = 0;
 		for (; ind > 0; ind -= ind & -ind) {
-            total += bit[ind]; 
-        }
+	            total += bit[ind]; 
+	        }
 		return total;
 	}
 };
