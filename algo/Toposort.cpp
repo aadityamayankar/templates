@@ -1,21 +1,26 @@
 vector<int> toposort(vector<vector<int>>& adj) {
     int n = adj.size();
-    vector<int> res, vis(n);
+    vector<int> state(n), res;
 
-    function<void(int)> dfs = [&](int u) {
-        vis[u] = 1;
-        for (int v : adj[u]) {
-            if (!vis[v]) {
-                dfs(v);
+    function<bool(int)> dfs = [&](int node) -> bool {
+        state[node] = 1;
+        for (auto& nei : adj[node]) {
+            if (state[nei] == 0) {
+                if (dfs(nei)) return true;
+            } else if (state[nei] == 1) {
+                return true;
             }
         }
-        res.push_back(u);
+        state[node] = 2;
+        res.push_back(node);
+        return false;
     };
 
     for (int i = 0; i < n; ++i) {
-        if (!vis[i]) {
-            dfs(i);
+        if (state[i] == 0) {
+            if (dfs(i)) return {};
         }
     }
-    return vector<int>(res.rbegin(), res.rend());
+
+    return res;
 }
